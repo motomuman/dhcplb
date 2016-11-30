@@ -159,7 +159,7 @@ func Test_ThrottleCacheRateFail(t *testing.T) {
 	for i := 0; i < loopCount; i++ {
 		key := fmt.Sprintf("my_key_%d", i)
 
-		if ok, _ := throttle.OK(key); ok {
+		if ok, _ := throttle.OK(key); !ok {
 			return
 		}
 
